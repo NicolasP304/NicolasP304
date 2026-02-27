@@ -1,4 +1,5 @@
-name: Deploy Next.js static site to GitHub Pages
+name: Deploy Next.js static site to GitHub Pages v2
+run-name: Pages deploy v2 @ ${{ github.sha }}
 
 on:
   push:

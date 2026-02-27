@@ -1,7 +1,33 @@
-- 👋 Hi, I’m @NicolasP304
-- 👀 I’m interested in front-end web development 
-- 🌱 I’m currently studying a Bachelor of Software Engineering degree
-- 💞️ I’m looking to collaborate on projects using the react.js framework
-- 📫 How to reach me: nicolas.papageorgiou@outlook.com
+# Nicolas Papageorgiou Portfolio
 
+This portfolio now runs on **Next.js + TypeScript + Tailwind CSS** with static export for GitHub Pages.
 
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Production build
+
+```bash
+npm run build
+```
+
+The static site is generated in `out/`.
+
+## GitHub Pages deployment
+
+Deployment is automated via GitHub Actions in:
+
+- `.github/workflows/deploy-pages.yml`
+
+The workflow builds and publishes the `out/` directory on pushes to `main`.
+
+## Notes
+
+- Static assets are served from `public/assets`.
+- `next.config.ts` handles GitHub Pages base path automatically for project repositories.

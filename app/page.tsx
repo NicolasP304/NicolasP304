@@ -339,16 +339,16 @@ export default function Home() {
         >
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
             {portfolioProjects.map((project) => (
-              <Card key={project.slug}>
+              <Card key={project.slug} className="project-card group">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm font-medium text-[color:var(--text-muted)]">{project.subtitle}</p>
                 <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">{project.description}</p>
                 <TagList items={project.tags} />
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="mt-4 inline-flex rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm font-semibold hover:bg-[color:var(--surface-muted)]"
+                  className="project-cta mt-4 inline-flex items-center gap-1.5 rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm font-semibold"
                 >
-                  Read case study
+                  Read case study <span aria-hidden="true" className="project-cta-arrow">→</span>
                 </Link>
               </Card>
             ))}

@@ -19,15 +19,15 @@ export default function ProjectsIndexPage() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {portfolioProjects.map((project) => (
-          <article key={project.slug} className="glass hover-lift reveal rounded-2xl p-5">
+          <article key={project.slug} className="glass hover-lift reveal project-card group rounded-2xl p-5">
             <h2 className="text-xl font-semibold">{project.title}</h2>
             <p className="mt-2 text-sm text-[color:var(--text-muted)]">{project.subtitle}</p>
             <p className="mt-3 text-sm text-[color:var(--text-muted)]">{project.description}</p>
             <Link
               href={`/projects/${project.slug}`}
-              className="mt-4 inline-flex rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm font-semibold hover:bg-[color:var(--surface-muted)]"
+              className="project-cta mt-4 inline-flex items-center gap-1.5 rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm font-semibold"
             >
-              Open case study
+              Open case study <span aria-hidden="true" className="project-cta-arrow">→</span>
             </Link>
           </article>
         ))}

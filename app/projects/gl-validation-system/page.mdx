@@ -1,0 +1,41 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "GL Validation System | Nicolas Papageorgiou",
+  description:
+    "Capstone case study on building real-time GL validation with Power Apps and Power Automate to reduce finance entry errors."
+};
+
+<main className="mx-auto w-[min(900px,92vw)] py-12 sm:py-16">
+  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[color:var(--text-muted)]">Case study</p>
+  <h1>Capstone: GL Validation System</h1>
+  <p>
+    As SCRUM Master in a capstone team, I helped deliver a validation system for single and bulk General Ledger
+    entries to reduce downstream accounting errors.
+  </p>
+
+  <h2>Context</h2>
+  <p>
+    Finance users were spending time correcting invalid ledger submissions after entry. We needed earlier validation
+    and faster feedback without adding friction for common cases.
+  </p>
+
+  <h2>Approach</h2>
+  <ul>
+    <li>Built real-time validation flows using Power Apps and Power Automate.</li>
+    <li>Aligned business rules with Oracle Fusion constraints.</li>
+    <li>Implemented support for both single-entry and bulk-entry paths.</li>
+    <li>Managed sprint planning, delivery sequencing, and stakeholder demos.</li>
+  </ul>
+
+  <h2>Outcome</h2>
+  <ul>
+    <li>Reduced entry errors before submission.</li>
+    <li>Improved throughput for finance teams handling high-volume updates.</li>
+    <li>Delivered a clearer, more reliable validation experience for end users.</li>
+  </ul>
+
+  <Link href="/projects" className="mt-8 inline-flex text-sm font-semibold text-[color:var(--brand)] hover:underline">
+    Back to all projects
+  </Link>
+</main>

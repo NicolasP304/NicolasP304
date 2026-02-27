@@ -1,0 +1,41 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Social Feed Integration | Nicolas Papageorgiou",
+  description:
+    "Case study on integrating Meta Graph API content into a client intranet while preserving reliability and maintainability."
+};
+
+<main className="mx-auto w-[min(900px,92vw)] py-12 sm:py-16">
+  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[color:var(--text-muted)]">Case study</p>
+  <h1>Social Feed Integration (Meta Graph API)</h1>
+  <p>
+    This enhancement embedded external social content directly into a client intranet to improve visibility and reduce
+    context switching for internal users.
+  </p>
+
+  <h2>Context</h2>
+  <p>
+    The client wanted relevant social updates visible in a controlled enterprise environment. The integration needed to
+    be performant, resilient to API issues, and easy to support.
+  </p>
+
+  <h2>Approach</h2>
+  <ul>
+    <li>Integrated Meta Graph API endpoints into the intranet frontend experience.</li>
+    <li>Implemented predictable data mapping and graceful fallback handling.</li>
+    <li>Supported incremental updates while minimizing impact on core intranet pages.</li>
+    <li>Documented setup and maintenance steps for support continuity.</li>
+  </ul>
+
+  <h2>Outcome</h2>
+  <ul>
+    <li>Delivered social content visibility inside the existing intranet workflow.</li>
+    <li>Improved information accessibility for internal teams.</li>
+    <li>Provided maintainable integration foundations for future API-based features.</li>
+  </ul>
+
+  <Link href="/projects" className="mt-8 inline-flex text-sm font-semibold text-[color:var(--brand)] hover:underline">
+    Back to all projects
+  </Link>
+</main>

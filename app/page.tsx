@@ -1,20 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { portfolioProjects } from "../lib/projects";
 import { Card, Section, TagList } from "./components/portfolio";
 
 type TimelineItem = {
   title: string;
   meta: string;
   bullets: string[];
-  tags: string[];
-};
-
-type Project = {
-  title: string;
-  subtitle: string;
-  description: string;
   tags: string[];
 };
 
@@ -60,30 +55,6 @@ const timelineItems: TimelineItem[] = [
       "Developed backend integration endpoints to support customer record management."
     ],
     tags: ["C#", "Umbraco", "APIs"]
-  }
-];
-
-const projects: Project[] = [
-  {
-    title: "Stripe Payment Gateway Integration",
-    subtitle: "Enterprise intranet form workflows (PHP-based)",
-    description:
-      "Implemented secure payment processing, improving transaction reliability and increasing client revenue from $5,000 to $15,000 (+200%).",
-    tags: ["PHP", "Payments", "Security", "Automation"]
-  },
-  {
-    title: "Capstone: GL Validation System",
-    subtitle: "Power Apps, Power Automate, Oracle Fusion rules",
-    description:
-      "Led a team as SCRUM Master to build real-time validation for single and bulk General Ledger entries, reducing errors and improving finance workflow efficiency.",
-    tags: ["Power Platform", "Scrum", "Validation"]
-  },
-  {
-    title: "Social Feed Integration (Meta Graph API)",
-    subtitle: "Client intranet enhancement",
-    description:
-      "Integrated a social media feed application with the Meta Graph API to surface content directly within the intranet.",
-    tags: ["API", "JavaScript", "Integration"]
   }
 ];
 
@@ -366,12 +337,18 @@ export default function Home() {
           description="Selected work that shows impact, engineering judgment, and delivery."
         >
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
-            {projects.map((project) => (
-              <Card key={project.title}>
+            {portfolioProjects.map((project) => (
+              <Card key={project.slug}>
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm font-medium text-[color:var(--text-muted)]">{project.subtitle}</p>
                 <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">{project.description}</p>
                 <TagList items={project.tags} />
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="mt-4 inline-flex rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm font-semibold hover:bg-[color:var(--surface-muted)]"
+                >
+                  Read case study
+                </Link>
               </Card>
             ))}
           </div>
@@ -379,6 +356,9 @@ export default function Home() {
           <p className="mt-5 text-sm text-[color:var(--text-muted)]">
             Additional work samples and code snippets are available upon request due to client confidentiality.
           </p>
+          <Link href="/projects" className="mt-4 inline-flex text-sm font-semibold text-[color:var(--brand)] hover:underline">
+            View all case studies
+          </Link>
         </Section>
 
         <Section

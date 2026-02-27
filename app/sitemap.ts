@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { portfolioProjects } from "../lib/projects";
 
 const siteUrl = "https://nicolasp304.github.io/NicolasP304";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

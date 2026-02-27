@@ -254,7 +254,7 @@ export default function Home() {
         <Section
           id="about"
           title="About"
-          description='I am Nicolas "Nick" Papageorgiou, a Melbourne-based graduate software engineer with a strong background in production support, stakeholder communication, and full-stack development.'
+          description='I am Nicolas Papageorgiou, a Melbourne-based graduate software engineer with a strong background in production support, stakeholder communication, and full-stack development.'
         >
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <Card>
@@ -457,7 +457,7 @@ export default function Home() {
                 </button>
               </div>
               <p className="mt-2 text-sm text-[color:var(--text-muted)]">
-                Tip: If you want a real contact form on GitHub Pages, Formspree free tier can be added later.
+                //Tip: If you want a real contact form on GitHub Pages, Formspree free tier can be added later.
               </p>
             </div>
           </Card>

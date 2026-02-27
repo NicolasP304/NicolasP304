@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import { Card, Section, TagList } from "./components/portfolio";
 
 type TimelineItem = {
   title: string;
@@ -85,21 +86,6 @@ const projects: Project[] = [
     tags: ["API", "JavaScript", "Integration"]
   }
 ];
-
-function TagList({ items }: { items: string[] }) {
-  return (
-    <div className="mt-4 flex flex-wrap gap-2">
-      {items.map((tag) => (
-        <span
-          key={tag}
-          className="mono rounded-full border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-3 py-1 text-xs font-medium"
-        >
-          {tag}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 function formatYear() {
   return new Date().getFullYear();
@@ -268,7 +254,7 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="glass hover-lift reveal rounded-2xl p-5">
+            <Card as="aside">
               <div className="space-y-4">
                 <div className="flex items-end justify-between gap-3">
                   <p className="text-2xl font-extrabold">2+ yrs</p>
@@ -289,18 +275,17 @@ export default function Home() {
               <p className="text-sm text-[color:var(--text-muted)]">
                 Highlight: implemented Stripe payment gateway in intranet form workflows, increasing revenue from $5k to $15k (+200%).
               </p>
-            </aside>
+            </Card>
           </div>
         </section>
 
-        <section id="about" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">About</h2>
-          <p className="mt-2 max-w-3xl text-[color:var(--text-muted)]">
-            I am Nicolas "Nick" Papageorgiou, a Melbourne-based graduate software engineer with a strong background in production support, stakeholder communication, and full-stack development.
-          </p>
-
+        <Section
+          id="about"
+          title="About"
+          description='I am Nicolas "Nick" Papageorgiou, a Melbourne-based graduate software engineer with a strong background in production support, stakeholder communication, and full-stack development.'
+        >
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">What I am good at</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
                 <li>Shipping pragmatic fixes and improvements in live environments.</li>
@@ -308,64 +293,58 @@ export default function Home() {
                 <li>Building reliable workflows across forms, permissions, integrations, and automation.</li>
                 <li>Working with stakeholders to clarify requirements and deliver measurable outcomes.</li>
               </ul>
-            </article>
+            </Card>
 
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">Looking for</h3>
               <p className="mt-3 text-[color:var(--text-muted)]">
                 Graduate opportunities in software development, cloud, business systems, or technical consulting.
               </p>
               <TagList items={["Software Engineering", "Cloud", "Business Systems", "Technical Consulting"]} />
-            </article>
+            </Card>
           </div>
-        </section>
+        </Section>
 
-        <section id="skills" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">Skills</h2>
-          <p className="mt-2 text-[color:var(--text-muted)]">
-            Tools and technologies I use to deliver production-ready solutions.
-          </p>
-
+        <Section id="skills" title="Skills" description="Tools and technologies I use to deliver production-ready solutions.">
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">Languages</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">PHP, JavaScript, Python, C#, Java, C++</p>
-            </article>
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            </Card>
+            <Card>
               <h3 className="text-xl font-semibold">Web</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">
                 HTML, CSS, jQuery, Bootstrap, Vue.js, React.js, Flask, Flutter, Umbraco
               </p>
-            </article>
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            </Card>
+            <Card>
               <h3 className="text-xl font-semibold">Data, Cloud, DevOps</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">MySQL, SQLite, AWS, Docker, Bash, Git</p>
-            </article>
+            </Card>
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">Ways of working</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">
                 Agile, Scrum, SDLC, Incident Management, Root Cause Analysis
               </p>
-            </article>
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            </Card>
+            <Card>
               <h3 className="text-xl font-semibold">Testing</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">JUnit, Mockito</p>
-            </article>
+            </Card>
           </div>
-        </section>
+        </Section>
 
-        <section id="experience" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">Experience</h2>
-          <p className="mt-2 text-[color:var(--text-muted)]">
-            Roles that shaped my engineering style: practical, reliable, and stakeholder-friendly.
-          </p>
-
+        <Section
+          id="experience"
+          title="Experience"
+          description="Roles that shaped my engineering style: practical, reliable, and stakeholder-friendly."
+        >
           <div className="mt-5 space-y-4">
             {timelineItems.map((item) => (
-              <article key={item.title} className="glass hover-lift reveal rounded-2xl p-5">
+              <Card key={item.title}>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <h3 className="text-xl font-semibold">{item.title}</h3>
                   <p className="text-sm font-medium text-[color:var(--text-muted)]">{item.meta}</p>
@@ -376,39 +355,39 @@ export default function Home() {
                   ))}
                 </ul>
                 <TagList items={item.tags} />
-              </article>
+              </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
-        <section id="projects" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">Projects</h2>
-          <p className="mt-2 text-[color:var(--text-muted)]">
-            Selected work that shows impact, engineering judgment, and delivery.
-          </p>
-
+        <Section
+          id="projects"
+          title="Projects"
+          description="Selected work that shows impact, engineering judgment, and delivery."
+        >
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
             {projects.map((project) => (
-              <article key={project.title} className="glass hover-lift reveal rounded-2xl p-5">
+              <Card key={project.title}>
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm font-medium text-[color:var(--text-muted)]">{project.subtitle}</p>
                 <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">{project.description}</p>
                 <TagList items={project.tags} />
-              </article>
+              </Card>
             ))}
           </div>
 
           <p className="mt-5 text-sm text-[color:var(--text-muted)]">
             Additional work samples and code snippets are available upon request due to client confidentiality.
           </p>
-        </section>
+        </Section>
 
-        <section id="education" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">Education and Certifications</h2>
-          <p className="mt-2 text-[color:var(--text-muted)]">Academic foundation plus practical credentials.</p>
-
+        <Section
+          id="education"
+          title="Education and Certifications"
+          description="Academic foundation plus practical credentials."
+        >
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">RMIT University - Bachelor of Software Engineering</h3>
               <p className="mt-2 text-sm text-[color:var(--text-muted)]">Feb 2022 to Jul 2025</p>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
@@ -418,9 +397,9 @@ export default function Home() {
                 <li>Web Programming</li>
                 <li>Advanced Programming Techniques</li>
               </ul>
-            </article>
+            </Card>
 
-            <article className="glass hover-lift reveal rounded-2xl p-5">
+            <Card>
               <h3 className="text-xl font-semibold">Certifications and Micro-credentials</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
                 <li>AWS Academy Graduate - Cloud Foundations (Training Badge)</li>
@@ -430,17 +409,16 @@ export default function Home() {
               </ul>
               <div className="my-4 border-t border-[color:var(--border)]" />
               <p className="text-sm text-[color:var(--text-muted)]">Australian working rights. Referees available upon request.</p>
-            </article>
+            </Card>
           </div>
-        </section>
+        </Section>
 
-        <section id="contact" className="reveal reveal-delay-1 py-8 sm:py-10">
-          <h2 className="text-3xl font-bold">Contact</h2>
-          <p className="mt-2 text-[color:var(--text-muted)]">
-            If you would like to chat about graduate roles, consulting, or building reliable systems, reach out.
-          </p>
-
-          <article className="glass hover-lift reveal mt-5 rounded-2xl p-5">
+        <Section
+          id="contact"
+          title="Contact"
+          description="If you would like to chat about graduate roles, consulting, or building reliable systems, reach out."
+        >
+          <Card className="mt-5">
             <div className="grid gap-4 md:grid-cols-3">
               <div>
                 <p className="text-sm font-medium text-[color:var(--text-muted)]">Email</p>
@@ -501,8 +479,8 @@ export default function Home() {
                 Tip: If you want a real contact form on GitHub Pages, Formspree free tier can be added later.
               </p>
             </div>
-          </article>
-        </section>
+          </Card>
+        </Section>
       </main>
 
       <footer className="mx-auto mt-8 flex w-[min(1120px,92vw)] flex-wrap items-center justify-between gap-2 border-t border-[color:var(--border)] py-6 text-sm text-[color:var(--text-muted)]">

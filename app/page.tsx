@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 type TimelineItem = {
@@ -215,9 +216,13 @@ export default function Home() {
               </h1>
 
               <div className="mt-6 h-28 w-28 overflow-hidden rounded-full border-2 border-[color:var(--border)]">
-                <img
+                <Image
                   src="/assets/profile.jpg"
                   alt="Nicolas Papageorgiou portrait"
+                  width={112}
+                  height={112}
+                  priority
+                  sizes="112px"
                   className="h-full w-full object-cover"
                 />
               </div>

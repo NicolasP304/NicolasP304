@@ -457,7 +457,7 @@ export default function Home() {
                 </button>
               </div>
               <p className="mt-2 text-sm text-[color:var(--text-muted)]">
-                //Tip: If you want a real contact form on GitHub Pages, Formspree free tier can be added later.
+                {/* Tip: If you want a real contact form on GitHub Pages, Formspree free tier can be added later. */}
               </p>
             </div>
           </Card>

@@ -159,7 +159,7 @@ export default function Home() {
       </header>
 
       <main id="content" className="mx-auto w-[min(1120px,92vw)]">
-        <section id="top" className="reveal relative overflow-hidden py-16 sm:py-20">
+        <section id="top" className="reveal relative py-16 sm:py-20">
           <div className="hero-orb float-a absolute -left-16 top-6 h-44 w-44 rounded-full bg-[color:var(--brand)]" />
           <div className="hero-orb float-b absolute right-0 top-12 h-36 w-36 rounded-full bg-[color:var(--brand-2)]" />
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { portfolioProjects } from "../lib/projects";
+import profilePhoto from "../public/assets/profile.jpg";
 import { Card, Section, TagList } from "./components/portfolio";
 
 type TimelineItem = {
@@ -174,7 +175,7 @@ export default function Home() {
 
               <div className="mt-6 h-28 w-28 overflow-hidden rounded-full border-2 border-[color:var(--border)]">
                 <Image
-                  src="/assets/profile.jpg"
+                  src={profilePhoto}
                   alt="Nicolas Papageorgiou portrait"
                   width={112}
                   height={112}
@@ -192,14 +193,14 @@ export default function Home() {
                 <a href="#projects" className="rounded-xl bg-gradient-to-r from-blue-500 to-emerald-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:translate-y-[-1px]">
                   View Projects
                 </a>
-                <a
+                <Link
                   href="/assets/Nicolas_Papageorgiou_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="glass rounded-xl px-5 py-3 text-sm font-bold"
                 >
                   Download Resume
-                </a>
+                </Link>
               </div>
 
               <div className="mt-5 flex flex-wrap gap-2">

@@ -30,14 +30,14 @@ export const metadata: Metadata = {
       "Graduate Software Engineer with 2+ years delivering enterprise intranet solutions.",
     type: "website",
     url: siteUrl,
-    images: ["/assets/profile.jpg"]
+    images: [`${siteUrl}/assets/profile.jpg`]
   },
   twitter: {
     card: "summary_large_image",
     title: "Nicolas Papageorgiou | Portfolio",
     description:
       "Graduate Software Engineer with 2+ years delivering enterprise intranet solutions.",
-    images: ["/assets/profile.jpg"]
+    images: [`${siteUrl}/assets/profile.jpg`]
   }
 };
 

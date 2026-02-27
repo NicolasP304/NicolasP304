@@ -55,10 +55,79 @@ body {
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .hero-orb {
   filter: blur(56px);
   opacity: 0.35;
   pointer-events: none;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 42px rgba(2, 6, 23, 0.42);
+}
+
+.reveal {
+  animation: reveal-up 560ms cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 120ms;
+}
+
+.float-a {
+  animation: orb-float-a 9s ease-in-out infinite;
+}
+
+.float-b {
+  animation: orb-float-b 11s ease-in-out infinite;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orb-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -14px);
+  }
+}
+
+@keyframes orb-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-16px, 12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .float-a,
+  .float-b {
+    animation: none;
+  }
+
+  .glass {
+    transition: none;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
 }

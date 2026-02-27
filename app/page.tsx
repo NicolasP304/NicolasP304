@@ -201,9 +201,9 @@ export default function Home() {
       </header>
 
       <main id="content" className="mx-auto w-[min(1120px,92vw)]">
-        <section id="top" className="relative overflow-hidden py-16 sm:py-20">
-          <div className="hero-orb absolute -left-16 top-6 h-44 w-44 rounded-full bg-[color:var(--brand)]" />
-          <div className="hero-orb absolute right-0 top-12 h-36 w-36 rounded-full bg-[color:var(--brand-2)]" />
+        <section id="top" className="reveal relative overflow-hidden py-16 sm:py-20">
+          <div className="hero-orb float-a absolute -left-16 top-6 h-44 w-44 rounded-full bg-[color:var(--brand)]" />
+          <div className="hero-orb float-b absolute right-0 top-12 h-36 w-36 rounded-full bg-[color:var(--brand-2)]" />
 
           <div className="grid items-start gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="relative">
@@ -268,7 +268,7 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="glass rounded-2xl p-5">
+            <aside className="glass hover-lift reveal rounded-2xl p-5">
               <div className="space-y-4">
                 <div className="flex items-end justify-between gap-3">
                   <p className="text-2xl font-extrabold">2+ yrs</p>
@@ -293,14 +293,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="py-8 sm:py-10">
+        <section id="about" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">About</h2>
           <p className="mt-2 max-w-3xl text-[color:var(--text-muted)]">
             I am Nicolas "Nick" Papageorgiou, a Melbourne-based graduate software engineer with a strong background in production support, stakeholder communication, and full-stack development.
           </p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">What I am good at</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
                 <li>Shipping pragmatic fixes and improvements in live environments.</li>
@@ -310,7 +310,7 @@ export default function Home() {
               </ul>
             </article>
 
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Looking for</h3>
               <p className="mt-3 text-[color:var(--text-muted)]">
                 Graduate opportunities in software development, cloud, business systems, or technical consulting.
@@ -320,44 +320,44 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="py-8 sm:py-10">
+        <section id="skills" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">Skills</h2>
           <p className="mt-2 text-[color:var(--text-muted)]">
             Tools and technologies I use to deliver production-ready solutions.
           </p>
 
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Languages</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">PHP, JavaScript, Python, C#, Java, C++</p>
             </article>
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Web</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">
                 HTML, CSS, jQuery, Bootstrap, Vue.js, React.js, Flask, Flutter, Umbraco
               </p>
             </article>
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Data, Cloud, DevOps</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">MySQL, SQLite, AWS, Docker, Bash, Git</p>
             </article>
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Ways of working</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">
                 Agile, Scrum, SDLC, Incident Management, Root Cause Analysis
               </p>
             </article>
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Testing</h3>
               <p className="mono mt-3 text-sm text-[color:var(--text-muted)]">JUnit, Mockito</p>
             </article>
           </div>
         </section>
 
-        <section id="experience" className="py-8 sm:py-10">
+        <section id="experience" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">Experience</h2>
           <p className="mt-2 text-[color:var(--text-muted)]">
             Roles that shaped my engineering style: practical, reliable, and stakeholder-friendly.
@@ -365,7 +365,7 @@ export default function Home() {
 
           <div className="mt-5 space-y-4">
             {timelineItems.map((item) => (
-              <article key={item.title} className="glass rounded-2xl p-5">
+              <article key={item.title} className="glass hover-lift reveal rounded-2xl p-5">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <h3 className="text-xl font-semibold">{item.title}</h3>
                   <p className="text-sm font-medium text-[color:var(--text-muted)]">{item.meta}</p>
@@ -381,7 +381,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="py-8 sm:py-10">
+        <section id="projects" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">Projects</h2>
           <p className="mt-2 text-[color:var(--text-muted)]">
             Selected work that shows impact, engineering judgment, and delivery.
@@ -389,7 +389,7 @@ export default function Home() {
 
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
             {projects.map((project) => (
-              <article key={project.title} className="glass rounded-2xl p-5">
+              <article key={project.title} className="glass hover-lift reveal rounded-2xl p-5">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm font-medium text-[color:var(--text-muted)]">{project.subtitle}</p>
                 <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">{project.description}</p>
@@ -403,12 +403,12 @@ export default function Home() {
           </p>
         </section>
 
-        <section id="education" className="py-8 sm:py-10">
+        <section id="education" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">Education and Certifications</h2>
           <p className="mt-2 text-[color:var(--text-muted)]">Academic foundation plus practical credentials.</p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">RMIT University - Bachelor of Software Engineering</h3>
               <p className="mt-2 text-sm text-[color:var(--text-muted)]">Feb 2022 to Jul 2025</p>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
@@ -420,7 +420,7 @@ export default function Home() {
               </ul>
             </article>
 
-            <article className="glass rounded-2xl p-5">
+            <article className="glass hover-lift reveal rounded-2xl p-5">
               <h3 className="text-xl font-semibold">Certifications and Micro-credentials</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[color:var(--text-muted)]">
                 <li>AWS Academy Graduate - Cloud Foundations (Training Badge)</li>
@@ -434,13 +434,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="py-8 sm:py-10">
+        <section id="contact" className="reveal reveal-delay-1 py-8 sm:py-10">
           <h2 className="text-3xl font-bold">Contact</h2>
           <p className="mt-2 text-[color:var(--text-muted)]">
             If you would like to chat about graduate roles, consulting, or building reliable systems, reach out.
           </p>
 
-          <article className="glass mt-5 rounded-2xl p-5">
+          <article className="glass hover-lift reveal mt-5 rounded-2xl p-5">
             <div className="grid gap-4 md:grid-cols-3">
               <div>
                 <p className="text-sm font-medium text-[color:var(--text-muted)]">Email</p>
